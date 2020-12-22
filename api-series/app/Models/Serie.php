@@ -14,5 +14,5 @@ class Serie extends Model
     {
         return $this->hasMany(Episodio::class);
     }
-    
+
 }

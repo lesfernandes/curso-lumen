@@ -42,4 +42,15 @@ class SeriesController
         $serie->fill($request->all());
         $serie->save();
     }
+
+    public function destroy(int $id)
+    {
+        $quantidadeRecursosRemovidos = Serie::destroy($id);
+        if ($quantidadeRecursosRemovidos === 0){
+            return response()->json([
+                'erro' => 'Recurso não encontrado.'
+            ], 404);
+        }
+        return response()->json('', 204);
+    }
 }

@@ -37,3 +37,5 @@ $router->group(['prefix' => 'api', 'middleware' => 'auth'], function() use ($rou
         $router->delete('{id}', 'EpisodiosController@destroy');
     });
 });
+
+$router->post('api/login', 'TokenController@gerarToken');

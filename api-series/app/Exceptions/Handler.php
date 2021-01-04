@@ -6,6 +6,9 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Validation\ValidationException;
 use Laravel\Lumen\Exceptions\Handler as ExceptionHandler;
+use Monolog\Formatter\LineFormatter;
+use Monolog\Handler\TelegramBotHandler;
+use Monolog\Logger;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Throwable;
 

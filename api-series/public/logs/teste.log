@@ -1,0 +1,7 @@
+[2021-01-04 20:00:26] local.DEBUG: debug log  
+[2021-01-04 20:00:26] local.INFO: info log  
+[2021-01-04 20:00:26] local.NOTICE: notice log  
+[2021-01-04 20:00:26] local.WARNING: warning log  
+[2021-01-04 20:00:26] local.ERROR: error log  
+[2021-01-04 20:00:26] local.ALERT: alert log  
+[2021-01-04 20:00:26] local.EMERGENCY: emergency log  

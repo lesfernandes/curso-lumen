@@ -2,6 +2,9 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
+use Illuminate\Support\Facades\Log;
+use Monolog\Handler\TelegramBotHandler;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -14,8 +17,15 @@
 */
 
 /** @var \Laravel\Lumen\Routing\Router $router */
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->get('/', function () {
+    Log::debug('debug log');
+    Log::info('info log');
+    Log::notice('notice log');
+    Log::warning('warning log');
+    Log::error('error log');
+    Log::critical('critical log');
+    Log::alert('alert log');
+    Log::emergency('emergency log');
 });
 
 $router->group(['prefix' => 'api', 'middleware' => 'autenticador'], function() use ($router) {

@@ -18,7 +18,7 @@ use Monolog\Handler\TelegramBotHandler;
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 $router->get('/', function () {
-    Log::debug('debug log');
+    Log::stack(['mysql', 'email'])->debug('debug log', ["teste" => "teste"]);
     Log::info('info log');
     Log::notice('notice log');
     Log::warning('warning log');

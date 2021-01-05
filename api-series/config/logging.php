@@ -1,5 +1,7 @@
 <?php
 
+use App\Logging\MySQLHandler;
+use App\Logging\MySQLLogger;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
@@ -40,7 +42,14 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['telegram', 'browser_console', 'stream_handler', 'email'],
+            'channels' => ['browser_console', 'stream_handler', 'mysql'],
+        ],
+
+        'mysql' => [
+            'driver' => 'custom',
+            'via' => MySQLLogger::class,
+            'handler' => MySQLHandler::class,
+            'level' => 'debug'
         ],
 
         'telegram' => [
@@ -55,7 +64,7 @@ return [
 
         'email' => [
             'driver' => 'monolog',
-            'level' => 'critical',
+            'level' => 'debug',
             'handler' => NativeMailerHandler::class,
             'with' => [
                 'to' => 'lemayara16@gmail.com',
